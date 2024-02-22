@@ -2,7 +2,7 @@
 gc() { git commit -m "$*"; }
 gpull() {
     GIT_PULL_BRANCH=${1:-$(gh)};
-    echo "Pulling from branch '$(GIT_PULL_BRANCH)'";
+    echo "Pulling from branch $GIT_PULL_BRANCH";
     git pull origin ${GIT_PULL_BRANCH};
 }
 ga() {
@@ -15,7 +15,7 @@ ga() {
 alias gfetch='git fetch'
 alias gb='git branch $*'
 alias gco='git checkout $*'
-alias gh='git rev-parse -abbrev-ref HEAD'
+alias gh='git rev-parse --abbrev-ref HEAD'
 alias gpush='git push'
 alias gs='git status'
 alias gcp='git cherry-pick $*'
